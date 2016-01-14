@@ -190,7 +190,7 @@ PRODUCT_PACKAGES += \
     libqsap_sdk
 
 # Doze
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     MotoDoze
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
