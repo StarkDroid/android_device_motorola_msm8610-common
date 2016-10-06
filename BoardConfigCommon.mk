@@ -48,7 +48,7 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.bootdevice=msm_sdcc.1 vmalloc=400M
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.bootdevice=msm_sdcc.1 vmalloc=400M androidboot.selinux=permissive
 
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 TARGET_SYSTEM_PROP := $(COMMON_PATH)/system.prop
@@ -89,7 +89,7 @@ TARGET_NO_RPC := true
 BOARD_HARDWARE_CLASS := $(COMMON_PATH)/cmhw/
 
 # Init
-TARGET_UNIFIED_DEVICE := true
+#TARGET_UNIFIED_DEVICE := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -103,6 +103,8 @@ TARGET_RECOVERY_DENSITY := hdpi
 BOARD_HAS_NO_SELECT_BUTTON := true
 HAVE_SELINUX := true
 TARGET_NOT_USE_GZIP_RECOVERY_RAMDISK := true
+
+TARGET_NEEDS_TEXT_RELOCATIONS := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
